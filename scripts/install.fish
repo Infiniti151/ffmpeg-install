@@ -1,6 +1,6 @@
 #!/usr/bin/fish
 
-sudo nala install -y nvidia-cuda-toolkit build-essential yasm cmake libtool libc6 libc6-dev libx264-dev libx265-dev unzip wget libnuma1 libnuma-dev clang
+sudo apt install -y nvidia-cuda-toolkit build-essential yasm cmake libtool libc6 libc6-dev libx264-dev libx265-dev unzip wget libnuma1 libnuma-dev clang
 git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git ~/nv-codec-headers
 cd ~/nv-codec-headers && sudo make install && ..
 git clone https://git.ffmpeg.org/ffmpeg.git ~/ffmpeg && cd ~/ffmpeg
