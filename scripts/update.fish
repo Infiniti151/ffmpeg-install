@@ -3,7 +3,7 @@
 function update -d "update ffmpeg"
 	sudo make uninstall
 	rm rf ./build/\*
-	./configure --enable-nonfree --enable-ffnvcodec --enable-libx264 --enable-libx265 --enable-cuda-llvm --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64 --disable-static --enable-shared
+	./configure --enable-nonfree --enable-ffnvcodec --enable-libx264 --enable-libx265 --enable-cuda-llvm --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64 --disable-static --enable-shared --enable-gpl
 	make -j 8
 	sudo make install
 	echo -e '\e[32mSuccessfully updated FFMpeg\e[0m' 
