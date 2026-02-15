@@ -5,7 +5,7 @@ git clone https://git.videolan.org/git/ffmpeg/nv-codec-headers.git ~/nv-codec-he
 cd ~/nv-codec-headers && sudo make install && ..
 git clone https://git.ffmpeg.org/ffmpeg.git ~/ffmpeg && cd ~/ffmpeg
 set -l latest (git branch -a | grep 'release' | tail -1 | string sub -s 18)
-echo -e '\e[32mInstalling FFmpeg \e[33m'$latest'\e[0m'
+echo (set_color green)Installing FFmpeg(set_color yellow) $latest(set_color normal)
 git switch $latest
 ./configure --enable-nonfree --enable-ffnvcodec --enable-libx264 --enable-libx265 --enable-cuda-llvm --extra-cflags=-I/usr/local/cuda/include --extra-ldflags=-L/usr/local/cuda/lib64 --disable-static --enable-shared --enable-gpl
 make -j 8
